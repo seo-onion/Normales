@@ -18,7 +18,7 @@ public class Usuario {
     private Long id;
 
     @Column(unique = true)
-    private String Username;
+    private String username;
 
     private String nombreCompleto;
 
@@ -26,7 +26,7 @@ public class Usuario {
 
     private String correo;
 
-    private String Password;
+    private String password;
 
 
 

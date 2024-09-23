@@ -22,7 +22,7 @@ public class UsuarioService {
         usuarioRepository.save(user);
     }
 
-    public Usuario buscarUsuario(UserRequestDto userRequestDto){
+    public UserResponseDto buscarUsuario(UserRequestDto userRequestDto){
 
 
         Usuario usuario1 = usuarioRepository.findUsuarioByUsername(userRequestDto.getUsername());
@@ -31,7 +31,7 @@ public class UsuarioService {
             throw new RuntimeException("Error 404");
         }
         if(usuario1.getPassword().equals(usuario2.getPassword())){
-            return usuario1;
+            return modelMapper.map(usuario1,UserResponseDto.class);
         }
         return null;
     }

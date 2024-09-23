@@ -21,9 +21,9 @@ public class UsuarioController {
         return ResponseEntity.created(null).build();
     }
 
-    @GetMapping("/login")
-    public ResponseEntity<Usuario> login(@RequestBody UserRequestDto userRequestDto){
-        Usuario newuser = usuarioService.buscarUsuario(userRequestDto);
+    @GetMapping("/ingreso")
+    public ResponseEntity<UserResponseDto> login(@RequestBody UserRequestDto userRequestDto){
+        UserResponseDto newuser = usuarioService.buscarUsuario(userRequestDto);
         return ResponseEntity.ok().body(newuser);
     }
 }
