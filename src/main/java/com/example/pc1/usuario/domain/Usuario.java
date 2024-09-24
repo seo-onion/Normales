@@ -1,10 +1,13 @@
 package com.example.pc1.usuario.domain;
 
+import com.example.pc1.kart.domain.Kart;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,6 +30,9 @@ public class Usuario {
     private String correo;
 
     private String password;
+
+    @OneToMany
+    List<Kart> carritosList;
 
 
 
