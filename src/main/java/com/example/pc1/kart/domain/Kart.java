@@ -1,6 +1,6 @@
 package com.example.pc1.kart.domain;
 
-import com.example.pc1.producto.domain.Product;
+import com.example.pc1.product.domain.Product;
 import com.example.pc1.usuario.domain.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

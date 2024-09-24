@@ -1,5 +1,6 @@
 package com.example.pc1.usuario.controller;
 
+import com.example.pc1.exceptions.ConflictException;
 import com.example.pc1.usuario.domain.Usuario;
 import com.example.pc1.usuario.domain.UsuarioService;
 import com.example.pc1.usuario.dtos.UserRequestDto;
@@ -18,7 +19,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping("/registro")
-    public ResponseEntity<Void> postuser(@RequestBody Usuario user){
+    public ResponseEntity<Void> postuser(@RequestBody Usuario user) throws ConflictException {
         usuarioService.registroUsuario(user);
         return ResponseEntity.created(null).build();
     }

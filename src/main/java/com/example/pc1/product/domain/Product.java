@@ -1,7 +1,8 @@
-package com.example.pc1.producto.domain;
+package com.example.pc1.product.domain;
 
 import com.example.pc1.kart.domain.Kart;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,4 +29,7 @@ public class Product {
     @ManyToMany
     private List<Kart> carritosList;
 
+    public void plusStock(Integer n){
+        stock+=n;
+    }
 }
